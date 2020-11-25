@@ -5,9 +5,8 @@ using namespace std;
 int m, n;
 int X[10002];
 int Y[10002];
-int S[10002][10002];
+int S[10002][10002]; //longgest subset from 1->i (1st line) and 1->j (second line)
 int MAX;
-int trace[10][10];
 
 int cur[10002];
 void INPUT()

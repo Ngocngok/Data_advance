@@ -19,6 +19,7 @@ void INPUT()
 int main()
 {
     INPUT();
+    /*
     SI[1] = 1;
     maxAns = SI[1];
     for(int i = 2; i <= n; i++)
@@ -36,9 +37,41 @@ int main()
             }
         }
     }
+    */
+    int TMPANS = -1e6;
+    for(int i = 1; i <= n; i++)
+    {
+        if(S[i] > 0)
+            break;
+        if(S[i] > TMPANS)
+            TMPANS = S[i];
+        if(i == n)
+        {
+            cout << TMPANS;
+            return 0;
+        }
+    }
+
+    int ANS = 0;
+    int CUR = 0;
+    for(int i = 1; i <= n; i++)
+    {
+        if(CUR+S[i] > 0)
+        {
+            CUR += S[i];
+            if(CUR > ANS)
+                ANS = CUR;
+        }
+        else
+            CUR = 0;
+    }
+
+
+    cout << ANS;
+
     
 
-    cout << maxAns;
+    //cout << maxAns;
     
     return 0;
 }

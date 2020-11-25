@@ -22,7 +22,7 @@ int MAXI(int k)
 {
     int tmp = S[k-L1];
 
-    for(int i = k-L1+1; i <= k-L2; i++)
+    for(int i = k-L1-1; i >= k-L2; i--)
     {
         if(S[i] >= tmp)
         {
@@ -43,9 +43,9 @@ void SOLVE()
         S[i] = X[i];
     }
 
-    for(int i = L1+1; i <= n; i++)
+    for(int j = L1+1; j <= n; j++)
     {
-        int tmp = MAXI(i);
+        int tmp = MAXI(j);
         if(total < tmp)
         {
             total = tmp;
@@ -57,6 +57,7 @@ void SOLVE()
 
 int main()
 {
+    ios_base::sync_with_stdio(false); cin.tie(NULL);
     INPUT();
     SOLVE();
 }
