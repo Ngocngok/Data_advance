@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int MAX = 1e5;
+const int MAX = 1e5+2;
 int M, N, CNT;
 vector<int> X[MAX];
 char COLOR[MAX];
