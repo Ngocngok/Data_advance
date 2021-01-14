@@ -28,11 +28,11 @@ void dfs(int u, int pu){// pu is the parent of u during DFS
             if(u == root) numChild++;
             dfs(v,u);
             low[u] = min(low[u],low[v]);
-           cout << "dfs(v = " << v << ") finished, low,num[" << v << "] = " << low[v] << "," << num[v];
+            cout << "dfs(v = " << v << ") finished, low,num[" << v << "] = " << low[v] << "," << num[v];
             cout << " low,num[" << u << "] = " << low[u] << "," << num[u] << endl;
             if(low[v] >= num[u])
             {
-                    arti[u] = true;
+                arti[u] = true;
                 cout << "FOUND ARTI " << u << endl;
             }
             if(low[v] == num[v]) nbBridges++;

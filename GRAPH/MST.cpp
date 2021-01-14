@@ -27,45 +27,38 @@ void INIT()
 
 bool ISCYCLE(int a, int b)
 {
-    // int PA, PB;
-    // int tmp1 = a;
-    // while (true)
-    // {
-    //     if(P[tmp1] == -1)
-    //     {
-    //         PA = tmp1;
-    //         break;
-    //     } 
-    //     tmp1 = P[tmp1];
-    //     if(tmp1 == b) return true;
-    // }
-
-    // tmp1 = b;
-    // while (true)
-    // {
-    //     if(P[tmp1] == -1) 
-    //     {
-    //         PB = tmp1;
-    //         break;
-    //     }
-    //     tmp1 = P[tmp1];
-    //     if(tmp1 == a) return true;
-    // }
-
-    // if(PA == PB)
-    //     return true;
-    // else
-    // {
-    //     P[PA] = b;
-    //     return false;
-    // }
-    if(P[a] == -1 || P[b] == -1)
+    int PA, PB;
+    int tmp1 = a;
+    while (true)
     {
-        P[a] = P[b] = 1;
-        return true;
+        if(P[tmp1] == -1)
+        {
+            PA = tmp1;
+            break;
+        } 
+        tmp1 = P[tmp1];
+        if(tmp1 == b) return true;
     }
 
-    return false;
+    tmp1 = b;
+    while (true)
+    {
+        if(P[tmp1] == -1) 
+        {
+            PB = tmp1;
+            break;
+        }
+        tmp1 = P[tmp1];
+        if(tmp1 == a) return true;
+    }
+
+    if(PA == PB)
+        return true;
+    else
+    {
+        P[PA] = b;
+        return false;
+    }
     
 
 
